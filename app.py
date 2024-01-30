@@ -17,7 +17,8 @@ app = FastAPI(
     title="Student Course API",
     summary="A sample application showing how to use FastAPI to add a ReST API to a MongoDB collection.",
 )
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
+# client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
 db = client.college
 student_collection = db.get_collection("students")
 
